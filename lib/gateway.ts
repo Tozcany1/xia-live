@@ -1,4 +1,4 @@
-import { createOpenAI } from "@ai-sdk/openai";
+import { createOpenAI } from "ai-sdk/openai";
 
 export const gateway = (modelId: string) => {
   const openrouter = createOpenAI({
