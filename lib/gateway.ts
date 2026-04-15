@@ -1,5 +1,14 @@
-import { createGatewayProvider } from "@ai-sdk/gateway";
+import OpenAI from "openai";
 
-export const gateway = createGatewayProvider({
-  baseURL: process.env.AI_GATEWAY_BASE_URL,
-});
+export const gateway = (modelId: string) => {
+  const openai = new OpenAI({
+    apiKey: process.env.OPENROUTER_API_KEY,
+    baseURL: "https://openrouter.ai/api/v1",
+  });
+
+  return {
+    provider: "openai",
+    model: modelId,
+    client: openai,
+  };
+};
