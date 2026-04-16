@@ -7,7 +7,7 @@ A simple [Next.js](https://nextjs.org) chatbot app to demonstrate the use of the
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fai-sdk-gateway-demo)
 
 1. Clone this repository with the Deploy button above
-1. Install the [Vercel CLI](https://vercel.com/docs/cli) if you don't already have it
+1. Install the [Vercel CLI](https://vercel.com/docs/cli) if you don't already have it. 1
 1. Clone the repository you created above: `git clone <repo-url>`
 1. Link it to a Vercel project: `vc link` or `vc deploy`
 
