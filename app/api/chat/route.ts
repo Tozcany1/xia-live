@@ -1,5 +1,4 @@
 import OpenAI from "openai";
-import { DEFAULT_MODEL, SUPPORTED_MODELS } from "@/lib/constants";
 
 export const maxDuration = 60;
 
@@ -9,20 +8,12 @@ const openrouter = new OpenAI({
 });
 
 export async function POST(req: Request) {
-  const { messages, modelId = DEFAULT_MODEL } = await req.json();
-
-  // Validación de modelo (se mantiene tu lógica)
-  if (!SUPPORTED_MODELS.includes(modelId)) {
-    return new Response(
-      JSON.stringify({ error: `Model ${modelId} is not supported` }),
-      { status: 400, headers: { "Content-Type": "application/json" } }
-    );
-  }
-
   try {
+    const { messages } = await req.json();
+
     const completion = await openrouter.chat.completions.create({
-      model: modelId || "openrouter/auto",
-      messages: messages,
+      model: "openrouter/auto",
+      messages,
     });
 
     return new Response(
