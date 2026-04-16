@@ -1,6 +1,5 @@
-import { convertToModelMessages, type UIMessage } from "ai";
-import { DEFAULT_MODEL, SUPPORTED_MODELS } from "@/lib/constants";
 import OpenAI from "openai";
+import { DEFAULT_MODEL, SUPPORTED_MODELS } from "@/lib/constants";
 
 export const maxDuration = 60;
 
@@ -10,12 +9,9 @@ const openrouter = new OpenAI({
 });
 
 export async function POST(req: Request) {
-  const {
-    messages,
-    modelId = DEFAULT_MODEL,
-  }: { messages: UIMessage[]; modelId: string } = await req.json();
+  const { messages, modelId = DEFAULT_MODEL } = await req.json();
 
-  // Validación (la dejamos igual, no rompemos tu lógica)
+  // Validación de modelo (se mantiene tu lógica)
   if (!SUPPORTED_MODELS.includes(modelId)) {
     return new Response(
       JSON.stringify({ error: `Model ${modelId} is not supported` }),
@@ -25,14 +21,14 @@ export async function POST(req: Request) {
 
   try {
     const completion = await openrouter.chat.completions.create({
-      model: modelId,
-      messages: convertToModelMessages(messages),
+      model: modelId || "openrouter/auto",
+      messages: messages,
     });
 
     return new Response(
       JSON.stringify({
         role: "assistant",
-        content: completion.choices[0].message.content,
+        content: completion.choices[0]?.message?.content || "",
       }),
       {
         status: 200,
