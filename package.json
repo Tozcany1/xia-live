@@ -13,7 +13,9 @@
     "@ai-sdk/openai": "^0.0.66",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "lucide-react": "^0.363.0",
+    "geist": "^1.3.0"
   },
   "devDependencies": {
     "typescript": "^5",
