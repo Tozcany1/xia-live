@@ -1,10 +1,4 @@
-A simple [Next.js](https://nextjs.org) chatbot app to demonstrate the use of the Vercel AI Gateway with the [AI SDK](https://sdk.vercel.ai).
-
-## Getting Started
-
-### One-time setup
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fai-sdk-gateway-demo)
+A simple [Next.js](https://nextjs.org) chatbot app to 
 
 1. Clone this repository with the Deploy button above
 1. Install the [Vercel CLI](https://vercel.com/docs/cli) if you don't already have it. 1
@@ -27,6 +21,6 @@ A simple [Next.js](https://nextjs.org) chatbot app to demonstrate the use of the
 
 ## Authors
 
-This repository is maintained by the [Vercel](https://vercel.com) team and community contributors. 
+This munity contributors. 
 
 Contributions are welcome! Feel free to open issues or submit pull requests to enhance functionality or fix bugs.
