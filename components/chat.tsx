@@ -3,8 +3,17 @@
 import { useChat } from 'ai/react'
 import { Send } from 'lucide-react'
 
-export default function Chat() {
-  const { messages, input, handleInputChange, handleSubmit } = useChat()
+type ChatProps = {
+  modelId: string;
+}
+
+export default function Chat({ modelId }: ChatProps) {
+  const { messages, input, handleInputChange, handleSubmit } = useChat({
+    api: '/api/chat',
+    body: {
+      modelId: modelId
+    }
+  })
 
   return (
     <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
